@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>考核测试（第二周）</title>
+
+</head>
+<body>
+<h1>考核测试（第二周）</h1>
+
+<h2>试前说明</h2>
+
+<ul>
+<li>顺序做题。</li>
+<li>考核时间: 14:00 - 19:00。</li>
+<li>试卷会在 14:00 左右通过邮件发出，14:30 前有疑惑请在微信里及时交流。</li>
+<li>收到考核邮件及做完试题后请分别回复邮件。（交卷时附上 github 项目链接）</li>
+</ul>
+
+
+<h2>github 提交约束</h2>
+
+<ul>
+<li>所有 git 操作请使用命令行。</li>
+<li>每道试题做完后请分别提交至 github 自己账号本次考核项目下。</li>
+<li>提交信息格式请勿擅写。（增加（add）、优化（optimized）、修正（fixed) 开头，冒号空格，然后提交信息）</li>
+<li>允许重复提交。（例如提交第一题后，发现有 bug 或更好的实现方式，可以提交修正或优化）</li>
+</ul>
+
+
+<h2>评分规则</h2>
+
+<ul>
+<li>百分制，六十分合格。</li>
+<li>乱序做题，不合格。</li>
+<li>逾期交卷，不合格。</li>
+<li>github 提交乱写，不合格。</li>
+<li>代码整洁度占 10%。</li>
+<li>平时表现占附加分 10分。（合格者忽略此项）</li>
+</ul>
+
+
+<h2>试题</h2>
+
+<h3>github（1 分）</h3>
+
+<p><strong>此分不得，不合格</strong></p>
+
+<ol>
+<li>创建项目，项目名称: exam-week2-1。</li>
+<li>包含 README.md、.gitignore, license 选择 GPL3.0。</li>
+<li>同步至本地。</li>
+</ol>
+
+
+<p><em>说明: 后面试题均在此项目下完成</em></p>
+
+<h3>markdown（14 分）</h3>
+
+<ol>
+<li>把<strong>本次考核试卷</strong>翻译为对应的 html 格式，写入文件: exam-week2-markdown.html。</li>
+<li>github 提交。（add: markdown 翻译为 html）</li>
+</ol>
+
+
+<h3>应用图标尺寸（5 分）</h3>
+
+<ol>
+<li>创建文件: app-icon-sizes.md。</li>
+<li>应用图标尺寸列表，及您的理解使用 markdown 表达出来。</li>
+<li>github 提交。（add: 应用图标尺寸及理解）</li>
+</ol>
+
+
+<h3>视图跳转 &amp; intent 的 flags（5 分）（仅 android）</h3>
+
+<ol>
+<li>创建文件: views-siwtch.md。</li>
+<li>Intent 的 flags 列表，及您的理解使用 markdown 表达出来。</li>
+<li>github 提交。（add: Intent 的 flags 列表及理解）</li>
+</ol>
+
+
+<h3>视图跳转的几种方式（5 分）（仅 ios）</h3>
+
+<ol>
+<li>创建文件: views-siwtch.md。</li>
+<li>视图跳转方式列表，及注意事项使用 markdown 表达出来。</li>
+<li>github 提交。（add: Intent 的 flags 列表及理解）</li>
+</ol>
+
+
+<h3>javascript &amp; native 交互（65 分）</h3>
+
+<p><strong>项目在新环境 <code>git clone</code> 后无法运行，得零分</strong></p>
+
+<h4>创建项目（5 分）</h4>
+
+<ul>
+<li>创建 android/ios 项目，名称: js-with-native。</li>
+<li>使用 <a href="https://github.com/square/leakcanary">leakcanary</a> 监测内存泄漏。（仅 android）</li>
+<li>使用 <code>cocoapod</code> 安装 <a href="https://github.com/marcuswestin/WebViewJavascriptBridge">WebViewJavascriptBridge</a>。（仅 ios）</li>
+</ul>
+
+
+<h4>三个界面命名及功能</h4>
+
+<ul>
+<li>LoginName, MainName, SettingName (ios: Name => Controller, android: Name => Activity)</li>
+<li>Login -> Main -> Setting -> Login</li>
+</ul>
+
+
+<h4>视图 Login （5 分）</h4>
+
+<ul>
+<li>项目中添加 login.html 文件，一个按钮【登录】。</li>
+<li>点击【登录】，跳转至 Main, 销毁自己。</li>
+<li><p>github 提交。（add: 视图 Login）</p></li>
+<li><p>模拟器界面截图，保存至: exam-week2-1/images/login.png。(图片格式不限)</p></li>
+<li>更新说明文档 exam-week2-1/README.md, 显示上述截图。</li>
+<li>github 提交。（add: 视图 Login，模拟器界面截图）</li>
+</ul>
+
+
+<h4>视图 Main（20 分）</h4>
+
+<ul>
+<li>项目中添加 main.html 文件，两个按钮【设置】【API呼叫】，两个文本框。</li>
+<li>点击按钮【设置】，跳转至 Setting。</li>
+<li>点击按钮【API呼叫】时，android/ios 代码处理公开 api，api 链接及响应的 json 内容，分别显示在 html 中的两个文本框中。</li>
+<li><p>github 提交。（add: 视图 Main）</p></li>
+<li><p>模拟器界面截图，保存至: exam-week2-1/images/main.png。(图片格式不限)</p></li>
+<li>更新说明文档 exam-week2-1/README.md, 显示上述截图。</li>
+<li>github 提交。（add: 视图 Main，模拟器界面截图）</li>
+</ul>
+
+
+<h4>视图 Setting（5 分）</h4>
+
+<ul>
+<li>项目中添加 setting.html 文件，两个按钮【返回】【登出】。</li>
+<li>点击【返回】，跳转至 Main, 销毁自己。</li>
+<li>点击【登出】，跳转至 Login, 销毁自己。</li>
+<li><p>github 提交。（add: 视图 Setting）</p></li>
+<li><p>模拟器界面截图，保存至: exam-week2-1/images/setting.png。(图片格式不限)</p></li>
+<li>更新说明文档 exam-week2-1/README.md, 显示上述截图。</li>
+<li>github 提交。（add: 视图 Setting，模拟器界面截图）</li>
+</ul>
+
+
+<h4>系统通知（15 分）</h4>
+
+<ul>
+<li>应用进入后台（home 键）前，android/ios 打印日志 "我休息一下"</li>
+<li>应用由后台进入前台，android/ios 弹出框显示 "开始工作了"</li>
+<li>应用处于前台，锁屏再解屏时，android/ios 弹出框显示 "欢迎归来"</li>
+<li>应用处于后台，锁屏再解屏时，打印日志 "我知道但不吭声"</li>
+<li>github 提交。（add: 系统通知）</li>
+</ul>
+
+
+<h4>gradlew 操作（15 分）（仅 android）</h4>
+
+<ul>
+<li>gradlew 版本，重定向至: exam-week2-1/gradlew/version.txt</li>
+<li>gradlew 任务列表，重定向至: exam-week2-1/gradlew/tasks.txt</li>
+<li>gradlew 清理项目日志，重定向至: exam-week2-1/gradlew/clean.txt</li>
+<li>gradlew 编译项目日志，重定向至: exam-week2-1/gradlew/build.txt</li>
+<li>gradlew 生成 apk 日志，重定向至: exam-week2-1/gradlew/assemble.txt</li>
+<li>github 提交。（add: gradlew 操作）</li>
+</ul>
+
+
+<h4>xcodebuild 操作（15 分）（仅 ios）</h4>
+
+<ul>
+<li>xcodebuild 版本，重定向至: exam-week2-1/xcodebuild/version.txt</li>
+<li>xcodebuild sdks 列表，重定向至: exam-week2-1/xcodebuild/showsdks.txt</li>
+<li>xcodebuild 清理项目日志，重定向至: exam-week2-1/xcodebuild/clean.txt</li>
+<li>xcodebuild 编译项目日志，重定向至: exam-week2-1/xcodebuild/build.txt</li>
+<li>xcodebuild 生成 ipa 日志，重定向至: exam-week2-1/xcodebuild/ipa.txt</li>
+<li>github 提交。（add: xcodebuild 操作）</li>
+</ul>
+
+
+<h3>综合 （10 分）</h3>
+
+<ul>
+<li>github 项目设置。</li>
+<li><code>git commit</code> 信息格式。</li>
+<li>文件（夹）名称格式。</li>
+<li>尽量避免内存泄漏。</li>
+<li>README.md 清空无用信息，更新内容时，使用有序列表样式。</li>
+</ul>
+
+</body>
+</html>
