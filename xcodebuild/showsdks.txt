@@ -1,0 +1,21 @@
+10:Desktop zhuxiaoyuan$ xcodebuild -showsdks
+OS X SDKs:
+	OS X 10.11                    	-sdk macosx10.11
+
+iOS SDKs:
+	iOS 9.3                       	-sdk iphoneos9.3
+
+iOS Simulator SDKs:
+	Simulator - iOS 9.3           	-sdk iphonesimulator9.3
+
+tvOS SDKs:
+	tvOS 9.2                      	-sdk appletvos9.2
+
+tvOS Simulator SDKs:
+	Simulator - tvOS 9.2          	-sdk appletvsimulator9.2
+
+watchOS SDKs:
+	watchOS 2.2                   	-sdk watchos2.2
+
+watchOS Simulator SDKs:
+	Simulator - watchOS 2.2       	-sdk watchsimulator2.2
