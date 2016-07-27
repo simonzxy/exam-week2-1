@@ -42,7 +42,7 @@
     _context[@"setting"] = ^(){
         
         SettingName *setting = [[SettingName alloc] init];
-        [weakSelf presentViewController:setting animated:YES completion:nil];
+        [weakSelf presentViewController:setting animated:NO completion:nil];
         
     };
     _context[@"call"] = ^(){
@@ -67,7 +67,6 @@
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         //    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         //js与oc交互之 oc调用js
-        
         dispatch_async(dispatch_get_main_queue(), ^{
         [_web stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"api('%@');",_urlstr]];
 
@@ -78,5 +77,7 @@
     }];
     [task resume];
 }
+
+
 
 @end
