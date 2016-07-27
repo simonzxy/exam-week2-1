@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
+
     //创建webview
     UIWebView *web =[[UIWebView alloc] init];
     web.frame = [UIScreen mainScreen].bounds;
@@ -36,7 +36,6 @@
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     
     _context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-//    __weak typeof(self) weakSelf = self;
     
     _context[@"btn"] = ^(){
         

@@ -18,6 +18,7 @@
 		C13F96111D4896590074BE0D /* SettingName.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F96101D4896590074BE0D /* SettingName.m */; };
 		C13F96131D4898640074BE0D /* login.html in Resources */ = {isa = PBXBuildFile; fileRef = C13F96121D4898640074BE0D /* login.html */; };
 		C13F96151D48988F0074BE0D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13F96141D48988F0074BE0D /* JavaScriptCore.framework */; };
+		C13F96171D48A03A0074BE0D /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = C13F96161D48A03A0074BE0D /* main.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C13F96101D4896590074BE0D /* SettingName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingName.m; sourceTree = "<group>"; };
 		C13F96121D4898640074BE0D /* login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = login.html; sourceTree = "<group>"; };
 		C13F96141D48988F0074BE0D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		C13F96161D48A03A0074BE0D /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
 		D22178DFA9A06CD415059CBF /* Pods-js-with-native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-js-with-native.debug.xcconfig"; path = "Pods/Target Support Files/Pods-js-with-native/Pods-js-with-native.debug.xcconfig"; sourceTree = "<group>"; };
 		E469CE9964383AC033FD6AEA /* libPods-js-with-native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-js-with-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 				C13F95FB1D488BCE0074BE0D /* Main.storyboard */,
 				C13F95FE1D488BCE0074BE0D /* Assets.xcassets */,
 				C13F96121D4898640074BE0D /* login.html */,
+				C13F96161D48A03A0074BE0D /* main.html */,
 				C13F96001D488BCE0074BE0D /* LaunchScreen.storyboard */,
 				C13F96031D488BCE0074BE0D /* Info.plist */,
 				C13F95F21D488BCE0074BE0D /* Supporting Files */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C13F96021D488BCE0074BE0D /* LaunchScreen.storyboard in Resources */,
+				C13F96171D48A03A0074BE0D /* main.html in Resources */,
 				C13F95FF1D488BCE0074BE0D /* Assets.xcassets in Resources */,
 				C13F96131D4898640074BE0D /* login.html in Resources */,
 				C13F95FD1D488BCE0074BE0D /* Main.storyboard in Resources */,
