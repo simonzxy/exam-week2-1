@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+
+target "js-with-native" do
+
+pod 'WebViewJavascriptBridge'
+
+end
