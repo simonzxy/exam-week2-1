@@ -65,13 +65,13 @@
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        //    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+      // NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         //js与oc交互之 oc调用js
+        
         dispatch_async(dispatch_get_main_queue(), ^{
         [_web stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"api('%@');",_urlstr]];
 
-            
-            // NSLog(@"%@",str);//测试代码
+       
         });
         
     }];
