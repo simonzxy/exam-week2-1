@@ -8,10 +8,12 @@
 
 #import "LoginNamecontroller.h"
 #import "MainNamecontroller.h"
-#import <JavaScriptCore/JavaScriptCore.h>
+#import "WebViewJavascriptBridge.h"
 
-@interface LoginName ()<UIWebViewDelegate>
-@property(nonatomic,strong)JSContext *context;
+
+@interface LoginName ()
+@property(nonatomic,strong)WebViewJavascriptBridge *bridge;
+
 
 @end
 
@@ -20,34 +22,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    [super viewWillAppear:YES];
     //创建webview
     UIWebView *web =[[UIWebView alloc] init];
     web.frame = [UIScreen mainScreen].bounds;
     [self.view addSubview:web];
-    web.delegate = self;
     //获取本地文件路径，webview加载
     NSString *pathml = [[NSBundle mainBundle] pathForResource:@"login" ofType:@"html"];
     NSURL *url =  [NSURL URLWithString:pathml];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [web loadRequest:request];
+    
+    _bridge=[WebViewJavascriptBridge bridgeForWebView:web];
+//    [_bridge registerHandler:@"mainload" handler:^(id data, WVJBResponseCallback responseCallback) {
+//        NSLog(@"调用完成");
+//        
+//         dispatch_async(dispatch_get_main_queue(), ^(){
+//           MainName *main = [[MainName alloc] init];
+//           [UIApplication sharedApplication].keyWindow.rootViewController = main;
+//            });
+//        
+//        responseCallback(data);
+//    }];
+    
+    [_bridge registerHandler:@"mainload" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"调用完成");
+        MainName *bview=[[MainName alloc]init];
+        //[self.navigationController popViewControllerAnimated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            [self presentViewController:bview animated:YES completion:^{
+                [self.view removeFromSuperview];
+            }];
+            
+        });
+        
+        responseCallback(data);
+    }];
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView{
-    //获得该网页的jscontext
-    _context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    //js调用oc
-    _context[@"btn"] = ^(){
-        
-        MainName *main = [[MainName alloc] init];
-        [UIApplication sharedApplication].keyWindow.rootViewController = main;
 
-        
-        
-        
-    };
-  
-}
 
 -(void)dealloc{
 

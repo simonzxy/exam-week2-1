@@ -8,8 +8,12 @@
 
 #import "AppDelegate.h"
 #import "LoginNamecontroller.h"
+#import <notify.h>
+
 
 @interface AppDelegate ()
+@property(nonatomic,strong)NSString *status;
+
 
 @end
 
@@ -27,6 +31,28 @@ static void displayStatusChanged(CFNotificationCenterRef center,
 
 
 }
+
+static void setScreenStateCb()
+
+{
+    
+    uint64_t locked;
+    
+    dispatch_once_t p;
+    
+    __block int token = 0;
+    notify_register_dispatch("com.apple.springboard.lockstate",&token,dispatch_get_main_queue(),^(int t){
+    });
+    notify_get_state(token, &locked);
+    
+    if ((int)locked ==1) {
+    NSLog(@"我知道，但不吭声");
+    
+    }
+//    NSLog(@"我知道，但不吭声");
+    
+}
+//////////////////////////////////////////////////////////
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -57,21 +83,18 @@ static void displayStatusChanged(CFNotificationCenterRef center,
 - (void)applicationDidEnterBackground:(UIApplication *)application {
 
     
-//    UIApplicationState state = [[UIApplication sharedApplication] applicationState];
-//    if (state == UIApplicationStateInactive) {
-//        NSLog(@"Sent to background by locking screen");
-//    } else if (state == UIApplicationStateBackground) {
-//        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"kDisplayStatusLocked"]) {
-//            NSLog(@"Sent to background by home button/switching to other app");
-//        } else {
-//            NSLog(@"Sent to background by locking screen");
-//        }
-//    }
+ 
+    while (YES) {
+
+        setScreenStateCb();
+        sleep(1);
+        
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    NSLog(@"我知道但不吭声");
+    
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"kDisplayStatusLocked"]) {
         UIAlertController *alert1 = [UIAlertController alertControllerWithTitle:@"标题" message:@"开始工作了" preferredStyle:UIAlertControllerStyleAlert];

@@ -8,12 +8,13 @@
 
 #import "MainNamecontroller.h"
 #import "SettingNamecontroller.h"
-#import <JavaScriptCore/JavaScriptCore.h>
+#import "WebViewJavascriptBridge.h"
 
-@interface MainName ()<UIWebViewDelegate>
-@property(nonatomic,strong)JSContext *context;
+@interface MainName ()
+
 @property(nonatomic,strong)NSString *urlstr;
 @property(nonatomic,strong)UIWebView *web;
+@property(nonatomic,strong)WebViewJavascriptBridge *bridge;
 
 @end
 
@@ -21,36 +22,78 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor redColor];
+
     //创建webview
     _web =[[UIWebView alloc] init];
     _web.frame = [UIScreen mainScreen].bounds;
     [self.view addSubview:_web];
-    _web.delegate = self;
+    
     //获取本地文件路径，webview加载
     NSString *pathml = [[NSBundle mainBundle] pathForResource:@"main" ofType:@"html"];
     NSURL *url =  [NSURL URLWithString:pathml];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_web loadRequest:request];
+    [WebViewJavascriptBridge enableLogging];
+    _bridge =[WebViewJavascriptBridge bridgeForWebView:_web];
+    
+    
+    //设置按钮之间  js与oc交互
+    [_bridge registerHandler:@"setting" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"调用完成");
+        
+        //[self.navigationController popViewControllerAnimated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^(){
+        SettingName *setting = [[SettingName alloc] init];
+        [self presentViewController:setting animated:NO completion:nil];
+
+         });
+        
+    }];
+    
+    //API请求按钮之间  js与oc交互
+    [_bridge registerHandler:@"loadapi" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"调用完成");
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        
+         _urlstr = @"http://iamjay.name/api/single_quota";
+  //     _urlstr = @"http://apis.juhe.cn/cook/queryid?key=95da610cfef936cd972d23c10f25f818&id=1001";
+        
+        NSURL *url = [NSURL URLWithString:_urlstr];
+        
+        NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            
+            NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
+            
+            [_bridge callHandler:@"loadadress" data:_urlstr responseCallback:nil];
+            
+            
+            [_bridge callHandler:@"loadcontent" data:str responseCallback:nil];
+            
+        }];
+        [task resume];
+   
+
+        
+    }];
+    
+    
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     
-    _context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-    __weak typeof(self) weakSelf = self;
-    _context[@"setting"] = ^(){
+
         
-        SettingName *setting = [[SettingName alloc] init];
-        [self presentViewController:setting animated:NO completion:nil];
+
         
-    };
-    _context[@"call"] = ^(){
-        
-        NSLog(@"API呼叫");//测试代码
-        
-        [weakSelf apicall];//自定义方法进行网络请求
-    };
+// 
+//    _context[@"call"] = ^(){
+//        
+//        NSLog(@"API呼叫");//测试代码
+//        
+//        [weakSelf apicall];//自定义方法进行网络请求
+//    };
     
 }
 
@@ -58,23 +101,19 @@
 
     NSURLSession *session = [NSURLSession sharedSession];
     
-//    _urlstr = @"https://api.douban.com/v2/book/1220562";
-    _urlstr = @"http://apis.juhe.cn/cook/queryid?key=95da610cfef936cd972d23c10f25f818&id=1001";
+    _urlstr = @"http://iamjay.name/api/single_quota";
+ //   _urlstr = @"http://apis.juhe.cn/cook/queryid?key=95da610cfef936cd972d23c10f25f818&id=1001";
     
     NSURL *url = [NSURL URLWithString:_urlstr];
     
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",str);
-      // NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        //js与oc交互之 oc调用js
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-        [_web stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"api('%@','%@');",_urlstr,str]];
 
-       
-        });
+        
+        [_bridge callHandler:@"showapiinner" data:str responseCallback:^(id response) {
+            NSLog(@"testJavascriptHandler responded: %@", response);
+        }];
         
     }];
     [task resume];

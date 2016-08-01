@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script>
-
-        function btn() {
-               
+    
+    <script type="text/javascript">
+        function setupWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+            if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+            window.WVJBCallbacks = [callback];
+            var WVJBIframe = document.createElement('iframe');
+            WVJBIframe.style.display = 'none';
+            WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+            document.documentElement.appendChild(WVJBIframe);
+            setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
         }
-    </script>
+    setupWebViewJavascriptBridge(function(bridge) {
+                                 
+                                 
+        var mainButton=document.getElementById('btn')
+        mainButton.onclick=function(load){
+        load.preventDefault();
+        bridge.callHandler('mainload',{'foo':'bar'},function(response){
+                                                    
+        })
+        }
+    })
+</script>
 
 </head>
 <body style="text-align: center">
 <br/>
 <br/>
-<button id = 'button' onclick="btn()">登录</button>
+<button id = 'btn'>登录</button>
 
 </body>
 </html>

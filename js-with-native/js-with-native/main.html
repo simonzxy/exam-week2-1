@@ -3,21 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script>
-        function setting() {
-
-
-        }
-        function api(str1,str2){
-            
-            var back = document.getElementById("main1");
-            back.value = str1;
-            var text = document.getElementById("main2");
-            text.value = str2;
-        }
-    function call(){
-    
+    <script type="text/javascript">
+        function setupWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
     }
+    setupWebViewJavascriptBridge(function(bridge) {
+            var buttonone=document.getElementById('button1')
+           buttonone.onclick=function(set){
+            set.preventDefault();
+            bridge.callHandler('setting',{'foo':'bar'},function(response){
+                                                    
+              })
+              }
+
+             var buttontwo=document.getElementById('button2')
+             buttontwo.onclick=function(load){
+             load.preventDefault();
+             bridge.callHandler('loadapi',{'foo':'bar'},function(response){
+               })
+               }
+                                 
+                                 
+            var loadbuttono =document.getElementById('main1')
+            bridge.registerHandler('loadadress', function(data, responseCallback) {
+            loadbuttono.value=data
+            var responseData = { 'Javascript Says':'Right back atcha!' }
+            responseCallback(responseData)
+            })
+                                 
+             var loadbuttont =document.getElementById('main2')
+             bridge.registerHandler('loadcontent', function(data, responseCallback) {
+             loadbuttont.value=data
+             var responseData = { 'Javascript Says':'Right back atcha!' }
+             responseCallback(responseData)
+            })
+       
+                                 
+    })
+    
 
     </script>
 
@@ -25,11 +55,11 @@
 <body style="text-align: center">
 <br/>
 <br/>
-<button id = 'button' onclick="setting()">设置</button>
-<button onclick = "call()">API呼叫</button>
+<button id = 'button1' >设置</button>
+<button id = 'button2'>API呼叫</button>
 <br/>
-<textarea  id="main1" cols="20" rows="10"></textarea>
-<textarea  id="main2" cols="20" rows="10"></textarea>
+<textarea  id = "main1" cols="20" rows="10"></textarea>
+<textarea  id = "main2" cols="20" rows="10"></textarea>
 
 </body>
 </html>
