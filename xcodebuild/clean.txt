@@ -1,0 +1,17 @@
+zhuxiaoyuandeMacBook-Pro:js-with-native zhuxiaoyuan$ xcodebuild clean
+=== CLEAN TARGET js-with-native OF PROJECT js-with-native WITH THE DEFAULT CONFIGURATION (Release) ===
+
+Check dependencies
+[BEROR]Code Sign error: No code signing identities found: No valid signing identities (i.e. certificate and private key pair) were found.
+
+Create product structure
+/bin/mkdir -p /Users/zhuxiaoyuan/Desktop/exam-week2-1/js-with-native/build/Release-iphoneos/js-with-native.app
+
+Clean.Remove clean build/Release-iphoneos/js-with-native.app
+    builtin-rm -rf /Users/zhuxiaoyuan/Desktop/exam-week2-1/js-with-native/build/Release-iphoneos/js-with-native.app
+
+Clean.Remove clean build/js-with-native.build/Release-iphoneos/js-with-native.build
+    builtin-rm -rf /Users/zhuxiaoyuan/Desktop/exam-week2-1/js-with-native/build/js-with-native.build/Release-iphoneos/js-with-native.build
+
+Clean.Remove clean build/Release-iphoneos/js-with-native.app.dSYM
+    builtin-rm -rf /Users/zhuxiaoyuan/Desktop/exam-week2-1/js-with-native/build/Release-iphoneos/js-with-native.app.dSYM

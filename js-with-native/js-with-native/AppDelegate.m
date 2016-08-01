@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginName.h"
+#import "LoginNamecontroller.h"
 
 @interface AppDelegate ()
 
@@ -71,6 +71,7 @@ static void displayStatusChanged(CFNotificationCenterRef center,
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    NSLog(@"我知道但不吭声");
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"kDisplayStatusLocked"]) {
         UIAlertController *alert1 = [UIAlertController alertControllerWithTitle:@"标题" message:@"开始工作了" preferredStyle:UIAlertControllerStyleAlert];

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 朱益达. All rights reserved.
 //
 
-#import "MainName.h"
-#import "SettingName.h"
+#import "MainNamecontroller.h"
+#import "SettingNamecontroller.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 
 @interface MainName ()<UIWebViewDelegate>
@@ -42,7 +42,7 @@
     _context[@"setting"] = ^(){
         
         SettingName *setting = [[SettingName alloc] init];
-        [weakSelf presentViewController:setting animated:NO completion:nil];
+        [self presentViewController:setting animated:NO completion:nil];
         
     };
     _context[@"call"] = ^(){
@@ -58,18 +58,20 @@
 
     NSURLSession *session = [NSURLSession sharedSession];
     
-    _urlstr = @"http://v.juhe.cn/nba/team_info_byId.php?team_id=8&key=e34f42ff859ed3aa974401bdde36dccf";
+//    _urlstr = @"https://api.douban.com/v2/book/1220562";
+    _urlstr = @"http://apis.juhe.cn/cook/queryid?key=95da610cfef936cd972d23c10f25f818&id=1001";
     
     NSURL *url = [NSURL URLWithString:_urlstr];
     
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",str);
       // NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         //js与oc交互之 oc调用js
         
         dispatch_async(dispatch_get_main_queue(), ^{
-        [_web stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"api('%@');",_urlstr]];
+        [_web stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"api('%@','%@');",_urlstr,str]];
 
        
         });

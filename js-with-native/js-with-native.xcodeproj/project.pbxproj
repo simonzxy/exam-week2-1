@@ -13,13 +13,14 @@
 		C13F95FD1D488BCE0074BE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13F95FB1D488BCE0074BE0D /* Main.storyboard */; };
 		C13F95FF1D488BCE0074BE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13F95FE1D488BCE0074BE0D /* Assets.xcassets */; };
 		C13F96021D488BCE0074BE0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13F96001D488BCE0074BE0D /* LaunchScreen.storyboard */; };
-		C13F960B1D4896100074BE0D /* LoginName.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F960A1D4896100074BE0D /* LoginName.m */; };
-		C13F960E1D48963C0074BE0D /* MainName.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F960D1D48963C0074BE0D /* MainName.m */; };
-		C13F96111D4896590074BE0D /* SettingName.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F96101D4896590074BE0D /* SettingName.m */; };
+		C13F960B1D4896100074BE0D /* LoginNamecontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F960A1D4896100074BE0D /* LoginNamecontroller.m */; };
+		C13F960E1D48963C0074BE0D /* MainNamecontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F960D1D48963C0074BE0D /* MainNamecontroller.m */; };
+		C13F96111D4896590074BE0D /* SettingNamecontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C13F96101D4896590074BE0D /* SettingNamecontroller.m */; };
 		C13F96131D4898640074BE0D /* login.html in Resources */ = {isa = PBXBuildFile; fileRef = C13F96121D4898640074BE0D /* login.html */; };
 		C13F96151D48988F0074BE0D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13F96141D48988F0074BE0D /* JavaScriptCore.framework */; };
 		C13F96171D48A03A0074BE0D /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = C13F96161D48A03A0074BE0D /* main.html */; };
 		C13F96191D48AFF30074BE0D /* setting.html in Resources */ = {isa = PBXBuildFile; fileRef = C13F96181D48AFF30074BE0D /* setting.html */; };
+		C13F96651D4EF99E0074BE0D /* libWebViewJavascriptBridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13F96641D4EF99E0074BE0D /* libWebViewJavascriptBridge.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,16 +33,17 @@
 		C13F95FE1D488BCE0074BE0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C13F96011D488BCE0074BE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C13F96031D488BCE0074BE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C13F96091D4896100074BE0D /* LoginName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginName.h; sourceTree = "<group>"; };
-		C13F960A1D4896100074BE0D /* LoginName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginName.m; sourceTree = "<group>"; };
-		C13F960C1D48963C0074BE0D /* MainName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainName.h; sourceTree = "<group>"; };
-		C13F960D1D48963C0074BE0D /* MainName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainName.m; sourceTree = "<group>"; };
-		C13F960F1D4896590074BE0D /* SettingName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingName.h; sourceTree = "<group>"; };
-		C13F96101D4896590074BE0D /* SettingName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingName.m; sourceTree = "<group>"; };
+		C13F96091D4896100074BE0D /* LoginNamecontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNamecontroller.h; sourceTree = "<group>"; };
+		C13F960A1D4896100074BE0D /* LoginNamecontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNamecontroller.m; sourceTree = "<group>"; };
+		C13F960C1D48963C0074BE0D /* MainNamecontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNamecontroller.h; sourceTree = "<group>"; };
+		C13F960D1D48963C0074BE0D /* MainNamecontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNamecontroller.m; sourceTree = "<group>"; };
+		C13F960F1D4896590074BE0D /* SettingNamecontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingNamecontroller.h; sourceTree = "<group>"; };
+		C13F96101D4896590074BE0D /* SettingNamecontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingNamecontroller.m; sourceTree = "<group>"; };
 		C13F96121D4898640074BE0D /* login.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = login.html; sourceTree = "<group>"; };
 		C13F96141D48988F0074BE0D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		C13F96161D48A03A0074BE0D /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
 		C13F96181D48AFF30074BE0D /* setting.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = setting.html; sourceTree = "<group>"; };
+		C13F96641D4EF99E0074BE0D /* libWebViewJavascriptBridge.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWebViewJavascriptBridge.a; path = "../../../Library/Developer/Xcode/DerivedData/js-with-native-bxnwgrylrovocsfwyzwrvvsyemrn/Build/Products/Debug-iphonesimulator/WebViewJavascriptBridge/libWebViewJavascriptBridge.a"; sourceTree = "<group>"; };
 		D22178DFA9A06CD415059CBF /* Pods-js-with-native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-js-with-native.debug.xcconfig"; path = "Pods/Target Support Files/Pods-js-with-native/Pods-js-with-native.debug.xcconfig"; sourceTree = "<group>"; };
 		E469CE9964383AC033FD6AEA /* libPods-js-with-native.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-js-with-native.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13F96651D4EF99E0074BE0D /* libWebViewJavascriptBridge.a in Frameworks */,
 				C13F96151D48988F0074BE0D /* JavaScriptCore.framework in Frameworks */,
 				5A3733D8BEF17C02C560DD7B /* libPods-js-with-native.a in Frameworks */,
 			);
@@ -91,12 +94,12 @@
 			children = (
 				C13F95F51D488BCE0074BE0D /* AppDelegate.h */,
 				C13F95F61D488BCE0074BE0D /* AppDelegate.m */,
-				C13F96091D4896100074BE0D /* LoginName.h */,
-				C13F960A1D4896100074BE0D /* LoginName.m */,
-				C13F960C1D48963C0074BE0D /* MainName.h */,
-				C13F960D1D48963C0074BE0D /* MainName.m */,
-				C13F960F1D4896590074BE0D /* SettingName.h */,
-				C13F96101D4896590074BE0D /* SettingName.m */,
+				C13F96091D4896100074BE0D /* LoginNamecontroller.h */,
+				C13F960A1D4896100074BE0D /* LoginNamecontroller.m */,
+				C13F960C1D48963C0074BE0D /* MainNamecontroller.h */,
+				C13F960D1D48963C0074BE0D /* MainNamecontroller.m */,
+				C13F960F1D4896590074BE0D /* SettingNamecontroller.h */,
+				C13F96101D4896590074BE0D /* SettingNamecontroller.m */,
 				C13F95FB1D488BCE0074BE0D /* Main.storyboard */,
 				C13F95FE1D488BCE0074BE0D /* Assets.xcassets */,
 				C13F96121D4898640074BE0D /* login.html */,
@@ -120,6 +123,7 @@
 		D2C57EACCA15FACBCC2DF962 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C13F96641D4EF99E0074BE0D /* libWebViewJavascriptBridge.a */,
 				C13F96141D48988F0074BE0D /* JavaScriptCore.framework */,
 				E469CE9964383AC033FD6AEA /* libPods-js-with-native.a */,
 			);
@@ -250,11 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C13F960B1D4896100074BE0D /* LoginName.m in Sources */,
-				C13F96111D4896590074BE0D /* SettingName.m in Sources */,
+				C13F960B1D4896100074BE0D /* LoginNamecontroller.m in Sources */,
+				C13F96111D4896590074BE0D /* SettingNamecontroller.m in Sources */,
 				C13F95F71D488BCE0074BE0D /* AppDelegate.m in Sources */,
 				C13F95F41D488BCE0074BE0D /* main.m in Sources */,
-				C13F960E1D48963C0074BE0D /* MainName.m in Sources */,
+				C13F960E1D48963C0074BE0D /* MainNamecontroller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
